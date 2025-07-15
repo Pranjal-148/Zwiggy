@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="css/register.css" />
+  <link rel="shortcut icon" href="img/icons.png" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="rbody">
+  <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4" style="max-width: 500px; width: 100%; background: rgba(255,255,255,0.97);">
+      <div class="text-center mb-4">
+        <h1 class="fw-bold" style="color: #f94a3d;">REGISTRATION</h1>
+        <div class="fw-semibold py-2" style="background: rgb(255,225,0); color: #f94a3d; border-radius: 8px;">ACCOUNT DETAILS</div>
+      </div>
+      <form action="login.html" method="get" autocomplete="on">
+        <div class="mb-3">
+          <label for="regName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="regName" name="NAME" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-3">
+          <label for="regMobile" class="form-label">Mobile Number</label>
+          <input type="tel" class="form-control" id="regMobile" name="MOBILE" placeholder="Enter your mobile no." pattern="[0-9]{10}" maxlength="10" required>
+        </div>
+        <div class="mb-3">
+          <label for="regAddress" class="form-label">Address</label>
+          <textarea class="form-control" id="regAddress" name="ADDRESS" rows="3" placeholder="Enter your address" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label d-block">Gender</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="GENDER" id="male" value="male" required>
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="GENDER" id="female" value="female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="regEmail" class="form-label">Email ID</label>
+          <input type="email" class="form-control" id="regEmail" name="EMAIL" placeholder="Enter your email id" required>
+        </div>
+        <div class="mb-3">
+          <label for="regPassword" class="form-label">Create Password</label>
+          <input type="password" class="form-control" id="regPassword" name="PASSWORD" placeholder="Create your password" required>
+        </div>
+        <div class="d-grid gap-2 mb-3">
+          <button type="submit" class="btn btn-danger btn-lg rounded-pill">Register</button>
+          <button type="reset" class="btn btn-secondary btn-lg rounded-pill">Reset</button>
+        </div>
+        <div class="text-center">
+          <span>Already have an account?</span>
+          <a href="login.html" class="text-decoration-none" style="color:#f94a3d;">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

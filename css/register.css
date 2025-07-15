@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body.lbody, body.rbody {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body.lbody {
+  background-image: url("https://www.thespruceeats.com/thmb/sLkcu8KzpoUr1u1sqXOLGjDPTx0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/309291-001-56a510423df78cf772862aea.jpg");
+}
+
+body.rbody {
+  background-image: url("https://res.cloudinary.com/hz3gmuqw6/image/upload/c_fill,q_60,w_750,f_auto/37-thali-canva-phpAAsz1i");
+}
+
+.card {
+  border-radius: 18px !important;
+}
+
+.card h1 {
+  font-family: cursive, "Poppins", sans-serif;
+  font-weight: 900;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #f94a3d;
+}
+
+.btn-danger {
+  background-color: #f94a3d !important;
+  border: none !important;
+}
+
+.btn-danger:hover {
+  background-color: #c32112 !important;
+}
+
+.btn-secondary {
+  background-color: #ffc107 !important;
+  color: #222 !important;
+  border: none !important;
+}
+
+input[type="radio"]:checked + label {
+  font-weight: 700;
+  color: #f94a3d;
+}
+
+textarea {
+  resize: none;
+}
+
+::-webkit-input-placeholder { color: #888 !important; }
+::-moz-placeholder { color: #888 !important; }
+:-ms-input-placeholder { color: #888 !important; }
+::placeholder { color: #888 !important; }

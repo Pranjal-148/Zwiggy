@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0e3e6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #fffbe7;
+  padding: 40px 24px 32px 24px;
+  border: 3px solid #e8ce0b;
+  color: #222;
+  border-radius: 18px;
+  margin: 40px auto;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(249, 74, 61, 0.10);
+}
+
+h2, h3 {
+  color: #f94a3d;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.cart-list {
+  margin-bottom: 22px;
+}
+
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.cart-item-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cart-item-meta {
+  color: #888;
+  font-size: 0.97rem;
+}
+
+.total-row {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #d7263d;
+  border-top: 2px solid #eee;
+  padding-top: 0.7rem;
+  margin-bottom: 18px;
+}
+
+label {
+  margin-bottom: 7px;
+  color: #f94a3d;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 10px;
+  border: 1px solid #d7d4a8;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: #f94a3d;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background-color: #d7263d;
+}
+
+.order-success {
+  display: none;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.order-success .bi-check-circle-fill {
+  color: #29fe34;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 18px 4vw;
+    margin: 18px 0;
+  }
+  h2, h3 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* Navbar Enhancements */
+.navbar {
+  font-size: 1.1rem;
+}
+
+.navbar-brand span.bg-danger {
+  background: #f94a3d !important;
+}
+
+.navbar .nav-link {
+  color: #333 !important;
+  transition: color 0.2s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #f94a3d !important;
+  font-weight: 600;
+}
+
+.btn-danger, .btn-outline-danger {
+  background-color: #f94a3d !important;
+  border-color: #f94a3d !important;
+}
+.btn-danger:hover, .btn-outline-danger:hover {
+  background-color: #c32112 !important;
+  border-color: #c32112 !important;
+}
+
+/* Hero Section */
+.bodyimg {
+  background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+  min-height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bodyimg h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+  text-shadow: 2px 2px 8px #222;
+}
+.bodyimg p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  text-shadow: 1px 1px 4px #222;
+}
+
+/* Features Section */
+.card .card-img-top.d1 {
+  background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_210,h_398/4x_-_No_min_order_x0bxuf");
+}
+.card .card-img-top.d2 {
+  background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy");
+}
+.card .card-img-top.d3 {
+  background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn");
+}
+.card .card-img-top {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 180px;
+  margin: 0 auto;
+}
+
+/* Promotional Banner */
+.bodyimg2 {
+  background-image: url("https://www.bitesbee.com/wp-content/uploads/2021/09/banner-3.jpg");
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 24px;
+  margin: 2rem 0;
+}
+
+/* Reviews Section */
+#about {
+  background: #f8f8f8;
+}
+#about .rounded-circle {
+  border: 2px solid #f94a3d;
+}
+#about .bg-white {
+  border-left: 4px solid #f94a3d;
+}
+#about h2 span {
+  color: #f94a3d;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #f0e3e6, #fff);
+  color: #333;
+}
+footer .fw-bold {
+  color: #f94a3d !important;
+}
+footer table {
+  color: #69697b;
+  font-size: 1rem;
+}
+footer th {
+  color: #222;
+  font-weight: 700;
+}
+footer td {
+  transition: color 0.2s;
+  cursor: pointer;
+}
+footer td:hover {
+  color: #f94a3d;
+  font-weight: 600;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 991px) {
+  .bodyimg h1 {
+    font-size: 3rem;
+  }
+  .bodyimg2 {
+    height: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bodyimg {
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+  .bodyimg h1 {
+    font-size: 2.2rem;
+  }
+  .bodyimg p {
+    font-size: 1.1rem;
+  }
+  #about .row {
+    flex-direction: column;
+  }
+  .card .card-img-top {
+    height: 120px;
+  }
+  .footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Utility Classes */
+.shadow {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+}
+.rounded-pill {
+  border-radius: 50rem !important;
+}

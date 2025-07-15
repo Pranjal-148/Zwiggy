@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
+  <link rel="stylesheet" href="css/register.css" />
+  <link rel="shortcut icon" href="img/icons.png" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="lbody">
+  <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%; background: rgba(255,255,255,0.95);">
+      <div class="text-center mb-4">
+        <h1 class="fw-bold" style="color: #f94a3d;">LOGIN</h1>
+      </div>
+      <form action="menu.html" method="get" autocomplete="on">
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">Email ID</label>
+          <input type="email" class="form-control" id="loginEmail" name="EMAIL" placeholder="Enter your email id" required>
+        </div>
+        <div class="mb-4">
+          <label for="loginPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="loginPassword" name="PASSWORD" placeholder="Enter your password" required>
+        </div>
+        <div class="d-grid mb-3">
+          <button type="submit" class="btn btn-danger btn-lg rounded-pill">Login</button>
+        </div>
+        <div class="text-center">
+          <span>Don't have an account?</span>
+          <a href="register.html" class="text-decoration-none" style="color:#f94a3d;">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

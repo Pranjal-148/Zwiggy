@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f6ec2a;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.nav, .navbar {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff0000;
+  padding: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-left,
+.nav-right {
+  background-color: rgb(23, 241, 16);
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-inline: 10px;
+}
+
+.nav-right a {
+  color: #000;
+  background-color: rgb(23, 241, 16);
+  text-decoration: none;
+}
+
+/* Page Headings */
+.head {
+  font-size: 3rem;
+  color: #f94a3d;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Section Headings */
+.apetizer > h1,
+section > h2 {
+  color: #d7263d;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Custom Cards (apetizer style) */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.apetizer {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+}
+
+.apett {
+  margin-bottom: 30px;
+}
+
+.apet {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  background: #fffbe7;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(249, 74, 61, 0.10);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.apet:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 8px 32px rgba(249, 74, 61, 0.18);
+}
+
+.apet-left {
+  width: 50%;
+  min-width: 220px;
+  font-size: 1.25rem;
+  padding: 30px 32px;
+  background-color: #fffbe7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.apet-left > p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #d7263d;
+  background: none;
+}
+
+.apet-left > button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #f94a3d;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+  margin-top: 5px;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.apet-left > button:hover {
+  background-color: #d7263d;
+}
+
+.apet-left > img {
+  width: 32px;
+  height: 32px;
+  margin-top: 8px;
+  background: none;
+}
+
+.apet-right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.apet-right > img {
+  width: 100%;
+  max-width: 320px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0 18px 18px 0;
+  display: block;
+}
+
+/* Bootstrap Card Style Fixes */
+.card {
+  border-radius: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(249, 74, 61, 0.12);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  display: block;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #d7263d;
+}
+
+.card-text {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-danger, .btn {
+  background: #f94a3d !important;
+  border: none !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.btn-danger:hover, .btn:hover {
+  background: #d7263d !important;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .apetizer {
+    max-width: 98vw;
+  }
+  .apet {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .apet-left, .apet-right {
+    width: 100%;
+    min-width: unset;
+    border-radius: 0;
+    padding: 20px 16px;
+  }
+  .apet-right > img {
+    border-radius: 0 0 18px 18px;
+    max-width: 100%;
+    height: 160px;
+  }
+}
+
+@media (max-width: 767px) {
+  .head {
+    font-size: 2rem;
+  }
+  .apetizer > h1, section > h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .apet-left {
+    font-size: 1rem;
+    padding: 16px 8px;
+  }
+  .apet-right > img {
+    height: 120px;
+  }
+  .card-img-top {
+    height: 10rem;
+  }
+}
+
+.cart-dropdown-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .cart-dropdown {
+    min-width: 320px;
+    max-width: 95vw;
+    z-index: 1000;
+    max-height: 380px;
+    overflow-y: auto;
+    border-radius: 1rem;
+    border: 1px solid #eee;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    background: #fff;
+  }
+  
+  .cart-dropdown-header {
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 0.5rem;
+  }
+  
+  .cart-dropdown-footer {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 0.7rem;
+    background: #fafafa;
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  .cart-count {
+    font-size: 0.9rem;
+    min-width: 22px;
+    min-height: 22px;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .cart-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f6f6f6;
+  }
+  
+  .cart-item-row:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item-info {
+    flex: 1 1 auto;
+  }
+  
+  .cart-item-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  
+  .cart-item-meta {
+    font-size: 0.95rem;
+    color: #888;
+  }
+  
+  .cart-item-remove {
+    color: #f94a3d;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .cart-item-remove:hover {
+    background: #ffeaea;
+  }
+  
+  @media (max-width: 600px) {
+    .cart-dropdown {
+      min-width: 220px;
+      font-size: 0.95rem;
+    }
+    .cart-dropdown-header span {
+      font-size: 1.1rem;
+    }
+  }
+  
+  

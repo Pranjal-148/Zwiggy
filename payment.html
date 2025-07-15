@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout & Payment</title>
+  <link rel="shortcut icon" href="icons.png" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    body {
+      background: #f6ec2a;
+      font-family: 'Poppins', sans-serif;
+    }
+    .checkout-card {
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(249,74,61,0.10);
+    }
+    .order-summary {
+      background: #fffbe7;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .order-summary h5 {
+      color: #f94a3d;
+      font-weight: 700;
+    }
+    .order-summary .total-row {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #d7263d;
+      border-top: 2px solid #eee;
+      padding-top: 0.7rem;
+    }
+    .payment-form label {
+      font-weight: 600;
+      color: #f94a3d;
+    }
+    .order-success {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (Optional, for consistency) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top mb-4">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="bg-danger text-white rounded px-2 fw-bold fs-4 me-2">Z</span>
+        <span class="fw-bold fs-4 text-danger">ZWIGGY</span>
+      </a>
+      <div class="ms-auto">
+        <a href="menu.html" class="btn btn-outline-danger rounded-pill me-2">
+          <i class="bi bi-arrow-left"></i> Back to Menu
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
+        <div class="card checkout-card p-4">
+          <h2 class="mb-4 text-center fw-bold text-danger">Checkout</h2>
+          
+          <!-- Order Summary -->
+          <div class="order-summary mb-4">
+            <h5 class="mb-3">Your Order</h5>
+            <div id="cart-list"></div>
+            <div class="d-flex justify-content-between align-items-center total-row mt-3">
+              <span>Total</span>
+              <span id="cart-total">Rs. 0</span>
+            </div>
+          </div>
+
+          <!-- Payment Form -->
+          <form id="paymentForm" class="payment-form">
+            <h5 class="mb-3">Payment Details</h5>
+            <div class="mb-3">
+              <label for="cardName" class="form-label">Cardholder Name</label>
+              <input type="text" class="form-control" id="cardName" required>
+            </div>
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Card Number</label>
+              <input type="text" class="form-control" id="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" required pattern="\d{4} \d{4} \d{4} \d{4}">
+            </div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="cardExpiry" class="form-label">Expiry (MM/YY)</label>
+                <input type="text" class="form-control" id="cardExpiry" maxlength="5" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="cardCvv" class="form-label">CVV</label>
+                <input type="password" class="form-control" id="cardCvv" maxlength="3" placeholder="123" required pattern="\d{3}">
+              </div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-danger btn-lg rounded-pill mt-2">Pay Now</button>
+            </div>
+          </form>
+          <div class="order-success alert alert-success mt-4 text-center" id="orderSuccess">
+            <i class="bi bi-check-circle-fill fs-3"></i>
+            <div class="fw-bold mt-2">Payment Successful!</div>
+            <div>Your order has been placed. Thank you for choosing Zwiggy!</div>
+            <a href="index.html" class="btn btn-outline-success mt-3">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and your script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // --- Cart Rendering & Payment Logic ---
+    const CART_KEY = 'food_cart_items';
+
+    function getCart() {
+      return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    }
+
+    function clearCart() {
+      localStorage.removeItem(CART_KEY);
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const cartList = document.getElementById('cart-list');
+      const cartTotal = document.getElementById('cart-total');
+      if (!cart.length) {
+        cartList.innerHTML = '<div class="text-muted text-center">Your cart is empty.</div>';
+        cartTotal.textContent = 'Rs. 0';
+        return;
+      }
+      let total = 0;
+      cartList.innerHTML = cart.map(item => {
+        const itemTotal = item.qty * item.price;
+        total += itemTotal;
+        return `
+          <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+            <div>
+              <span class="fw-semibold">${item.name}</span>
+              <span class="text-muted small">x ${item.qty}</span>
+            </div>
+            <div>Rs. ${itemTotal}</div>
+          </div>
+        `;
+      }).join('');
+      cartTotal.textContent = `Rs. ${total}`;
+    }
+
+    // Payment form validation and fake payment
+    document.getElementById('paymentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simple validation (Bootstrap will also help)
+      const name = document.getElementById('cardName').value.trim();
+      const number = document.getElementById('cardNumber').value.trim();
+      const expiry = document.getElementById('cardExpiry').value.trim();
+      const cvv = document.getElementById('cardCvv').value.trim();
+
+      // Basic input checks
+      if (!name || !/^\d{4} \d{4} \d{4} \d{4}$/.test(number) ||
+          !/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry) ||
+          !/^\d{3}$/.test(cvv)) {
+        alert('Please enter valid payment details.');
+        return;
+      }
+
+      // Simulate payment processing
+      document.getElementById('paymentForm').style.display = 'none';
+      document.getElementById('orderSuccess').style.display = 'block';
+      clearCart();
+    });
+
+    // Render cart on load
+    renderCart();
+  </script>
+</body>
+</html>
